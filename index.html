@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bang Dunia - Generator Kartu ATM</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>BANG DUNIA</h1>
+                <p>Generator Kartu ATM & Saldo</p>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#" id="nav-home" class="active">Beranda</a></li>
+                    <li><a href="#" id="nav-register">Daftar</a></li>
+                    <li><a href="#" id="nav-login">Masuk</a></li>
+                    <li><a href="#" id="nav-logout" style="display: none;">Keluar</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Halaman Beranda -->
+        <section id="home-section" class="section-container">
+            <div class="welcome-message">
+                <h2>Selamat Datang di Generator Kartu ATM Bang Dunia</h2>
+                <p>Buat kartu ATM virtual dengan saldo sesuai keinginan Anda. Pilih dari berbagai bank di seluruh dunia.</p>
+                <div class="auth-buttons">
+                    <button id="btn-to-register" class="btn-primary">Daftar Sekarang</button>
+                    <button id="btn-to-login" class="btn-secondary">Sudah Punya Akun? Masuk</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Halaman Pendaftaran -->
+        <section id="register-section" class="section-container" style="display: none;">
+            <div class="auth-container">
+                <h2>Daftar Akun Baru</h2>
+                <form id="register-form">
+                    <div class="form-group">
+                        <label for="register-name">Nama Lengkap</label>
+                        <input type="text" id="register-name" name="name" placeholder="Masukkan nama lengkap" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="register-email">Email</label>
+                        <input type="email" id="register-email" name="email" placeholder="Masukkan email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="register-password">Password</label>
+                        <input type="password" id="register-password" name="password" placeholder="Masukkan password" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <button type="submit" class="btn-primary">Daftar</button>
+                    </div>
+                    
+                    <div class="form-footer">
+                        <p>Sudah punya akun? <a href="#" id="link-to-login">Masuk di sini</a></p>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- Halaman Login -->
+        <section id="login-section" class="section-container" style="display: none;">
+            <div class="auth-container">
+                <h2>Masuk ke Akun Anda</h2>
+                <form id="login-form">
+                    <div class="form-group">
+                        <label for="login-email">Email</label>
+                        <input type="email" id="login-email" name="email" placeholder="Masukkan email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="login-password">Password</label>
+                        <input type="password" id="login-password" name="password" placeholder="Masukkan password" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <button type="submit" class="btn-primary">Masuk</button>
+                    </div>
+                    
+                    <div class="form-footer">
+                        <p>Belum punya akun? <a href="#" id="link-to-register">Daftar di sini</a></p>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- Halaman Generator Kartu ATM -->
+        <section id="card-generator-section" class="section-container" style="display: none;">
+            <div class="card-generator">
+                <div class="form-container">
+                    <h2>Buat Kartu ATM Baru</h2>
+                    <form id="atm-form">
+                        <div class="form-group">
+                            <label for="name">Nama Pemilik Kartu</label>
+                            <input type="text" id="name" name="name" placeholder="Masukkan nama pemilik kartu" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="balance">Saldo Awal (Rp)</label>
+                            <input type="number" id="balance" name="balance" placeholder="Masukkan saldo awal" min="0" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="bank-select">Pilih Bank</label>
+                            <select id="bank-select" name="bank-id" required>
+                                <option value="" disabled selected>Pilih Bank</option>
+                                <!-- Bank options will be loaded dynamically -->
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="card-type">Jenis Kartu</label>
+                            <select id="card-type" name="card-type">
+                                <option value="STANDARD">Standard</option>
+                                <option value="GOLD">Gold</option>
+                                <option value="PLATINUM">Platinum</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <button type="submit" class="btn-generate">Generate Kartu ATM</button>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="card-preview">
+                    <h2>Pratinjau Kartu</h2>
+                    <div class="atm-card" id="atm-card">
+                        <div class="card-header">
+                            <div class="bank-logo" id="preview-bank-name">BANG DUNIA</div>
+                            <div class="card-type" id="preview-card-type">STANDARD</div>
+                        </div>
+                        <div class="card-chip">
+                            <div class="chip-icon"><i class="fas fa-microchip"></i></div>
+                        </div>
+                        <div class="card-number" id="preview-card-number">4219 •••• •••• ••••</div>
+                        <div class="card-details">
+                            <div class="card-holder">
+                                <span class="label">NAMA</span>
+                                <span class="value" id="preview-name">KARTU BANG DUNIA</span>
+                            </div>
+                            <div class="card-expiry">
+                                <span class="label">VALID THRU</span>
+                                <span class="value" id="preview-expiry">MM/YY</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card-back">
+                        <div class="magnetic-strip"></div>
+                        <div class="signature-panel">
+                            <div class="cvv-container">
+                                <span class="cvv-label">CVV</span>
+                                <span class="cvv-value" id="preview-cvv">•••</span>
+                            </div>
+                        </div>
+                        <div class="balance-container">
+                            <span class="balance-label">SALDO</span>
+                            <span class="balance-value" id="preview-balance">Rp 0</span>
+                        </div>
+                    </div>
+                    
+                    <div class="card-actions" id="card-actions" style="display: none;">
+                        <button id="btn-update-balance" class="btn-update">Update Saldo</button>
+                        <button id="btn-download" class="btn-download">Download Kartu</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="balance-update" id="balance-update" style="display: none;">
+            <h2>Update Saldo</h2>
+            <form id="balance-form">
+                <div class="form-group">
+                    <label for="new-balance">Saldo Baru (Rp)</label>
+                    <input type="number" id="new-balance" name="new-balance" placeholder="Masukkan saldo baru" min="0" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn-update">Update Saldo</button>
+                    <button type="button" id="btn-cancel" class="btn-cancel">Batal</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Bang Dunia. Hak Cipta Dilindungi.</p>
+        </div>
+    </footer>
+
+    <div id="notification" class="notification"></div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

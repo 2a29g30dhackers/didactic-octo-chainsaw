@@ -1,0 +1,541 @@
+/* Reset dan variabel */
+:root {
+    --primary-color: #1a5276;
+    --secondary-color: #2980b9;
+    --accent-color: #f39c12;
+    --light-color: #ecf0f1;
+    --dark-color: #2c3e50;
+    --success-color: #27ae60;
+    --danger-color: #c0392b;
+    --card-gold: linear-gradient(135deg, #d4af37 0%, #f2d279 50%, #d4af37 100%);
+    --card-platinum: linear-gradient(135deg, #e5e4e2 0%, #ffffff 50%, #e5e4e2 100%);
+    --card-standard: linear-gradient(135deg, #2980b9 0%, #3498db 50%, #2980b9 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: var(--dark-color);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Header */
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 20px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.logo p {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+/* Navigation */
+.main-nav {
+    margin-top: 15px;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.main-nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.main-nav a:hover, .main-nav a.active {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Main Content */
+main {
+    padding: 40px 0;
+}
+
+.section-container {
+    margin-bottom: 40px;
+}
+
+/* Welcome Section */
+.welcome-message {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 40px;
+}
+
+.welcome-message h2 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.welcome-message p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.auth-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Auth Forms */
+.auth-container {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.auth-container h2 {
+    color: var(--primary-color);
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.form-footer {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.form-footer a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+.form-footer a:hover {
+    text-decoration: underline;
+}
+
+/* Card Generator */
+.card-generator {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.form-container, .card-preview {
+    flex: 1;
+    min-width: 300px;
+    background-color: white;
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+h2 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--dark-color);
+}
+
+input, select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+input:focus, select:focus {
+    border-color: var(--secondary-color);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(41, 128, 185, 0.1);
+}
+
+button {
+    cursor: pointer;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+    width: 100%;
+}
+
+.btn-primary:hover {
+    background-color: #154360;
+}
+
+.btn-secondary {
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    width: 100%;
+}
+
+.btn-secondary:hover {
+    background-color: #d5dbdb;
+}
+
+.btn-generate {
+    background-color: var(--primary-color);
+    color: white;
+    width: 100%;
+}
+
+.btn-generate:hover {
+    background-color: #154360;
+}
+
+.btn-update {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.btn-update:hover {
+    background-color: #2471a3;
+}
+
+.btn-download {
+    background-color: var(--success-color);
+    color: white;
+}
+
+.btn-download:hover {
+    background-color: #229954;
+}
+
+.btn-cancel {
+    background-color: #95a5a6;
+    color: white;
+}
+
+.btn-cancel:hover {
+    background-color: #7f8c8d;
+}
+
+/* ATM Card Styles */
+.atm-card {
+    width: 100%;
+    height: 200px;
+    background: var(--card-standard);
+    border-radius: 12px;
+    padding: 20px;
+    color: white;
+    position: relative;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.atm-card.gold {
+    background: var(--card-gold);
+    color: var(--dark-color);
+}
+
+.atm-card.platinum {
+    background: var(--card-platinum);
+    color: var(--dark-color);
+}
+
+/* Bank-specific card styles */
+.atm-card.bank-red {
+    background: linear-gradient(135deg, #e74c3c 0%, #f39c12 100%);
+}
+
+.atm-card.bank-blue {
+    background: linear-gradient(135deg, #2980b9 0%, #3498db 100%);
+}
+
+.atm-card.bank-green {
+    background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+}
+
+.atm-card.bank-orange {
+    background: linear-gradient(135deg, #f39c12 0%, #f1c40f 100%);
+}
+
+.atm-card.bank-yellow {
+    background: linear-gradient(135deg, #f1c40f 0%, #f9e79f 100%);
+    color: var(--dark-color);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.bank-logo {
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.card-type {
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.card-chip {
+    margin-bottom: 20px;
+}
+
+.chip-icon {
+    font-size: 1.5rem;
+    color: #f39c12;
+}
+
+.card-number {
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    font-family: 'Courier New', monospace;
+}
+
+.card-details {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-holder, .card-expiry {
+    display: flex;
+    flex-direction: column;
+}
+
+.label {
+    font-size: 0.7rem;
+    opacity: 0.8;
+    margin-bottom: 5px;
+}
+
+.value {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* Card Back */
+.card-back {
+    width: 100%;
+    height: 120px;
+    background-color: #f0f0f0;
+    border-radius: 12px;
+    position: relative;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.magnetic-strip {
+    width: 100%;
+    height: 40px;
+    background-color: #333;
+    margin-top: 20px;
+}
+
+.signature-panel {
+    width: 80%;
+    height: 40px;
+    background-color: white;
+    margin: 10px auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 10px;
+}
+
+.cvv-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.cvv-label {
+    font-size: 0.6rem;
+    color: #777;
+}
+
+.cvv-value {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.balance-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    margin-top: 10px;
+}
+
+.balance-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.balance-value {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+/* Card Actions */
+.card-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.card-actions button {
+    flex: 1;
+}
+
+/* Balance Update Section */
+.balance-update {
+    background-color: white;
+    border-radius: 8px;
+    padding: 25px;
+    margin-top: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.balance-update form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.balance-update .form-group:last-child {
+    display: flex;
+    gap: 10px;
+}
+
+.balance-update button {
+    flex: 1;
+}
+
+/* Notification */
+.notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 15px 25px;
+    background-color: var(--success-color);
+    color: white;
+    border-radius: 4px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(100px);
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.notification.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.notification.error {
+    background-color: var(--danger-color);
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark-color);
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .card-generator {
+        flex-direction: column;
+    }
+    
+    .form-container, .card-preview {
+        width: 100%;
+    }
+    
+    .atm-card {
+        height: 180px;
+    }
+    
+    .card-number {
+        font-size: 1.1rem;
+    }
+    
+    .auth-buttons {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .atm-card {
+        height: 160px;
+        padding: 15px;
+    }
+    
+    .card-number {
+        font-size: 1rem;
+        margin-bottom: 15px;
+    }
+    
+    .bank-logo, .card-type {
+        font-size: 0.9rem;
+    }
+    
+    .balance-update .form-group:last-child {
+        flex-direction: column;
+    }
+    
+    .main-nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
